@@ -13,7 +13,7 @@ Scripts is this repo are based on documentation and blog posts:
   - kubectl
   - docker-credential-helper for registry authentication
   - tilt.dev
-  - minikube
+  - minikube (need sudo access)
 - configure minikube
 - install and configure addons
   - ingress
@@ -21,7 +21,7 @@ Scripts is this repo are based on documentation and blog posts:
   - metallb
   - metrics-server
   - dashboard
-- configure MacOS DNS resolver for .localdev domain
+- configure MacOS DNS resolver for .localdev domain (need sudo access)
 
 # Launch development context
 `./launch.sh` script:
