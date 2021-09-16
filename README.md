@@ -37,3 +37,6 @@ To use Docker from anywhere on your machine:
 $ minikube -p localdev docker-env | source
 $ docker info
 ```
+# Keeping containers
+
+Running `minikube stop/start` will delete all container not linked to kubernetes or addons. To avoid this, run `minikube pause/unpause`.
