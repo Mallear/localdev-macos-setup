@@ -1,0 +1,32 @@
+Minikube localdev setup
+---
+
+Scripts is this repo are based on documentation and blog posts:
+- https://itnext.io/goodbye-docker-desktop-hello-minikube-3649f2a1c469
+- https://minikube.sigs.k8s.io/docs/handbook/addons/ingress-dns/#mac-os
+
+# Install
+`./install.sh` script:
+- install all dependencies:
+  - hyperkit
+  - docker engine and cli
+  - kubectl
+  - docker-credential-helper for registry authentication
+  - tilt.dev
+  - minikube
+- configure minikube
+- install and configure addons
+  - ingress
+  - ingress-dns
+  - metallb
+  - metrics-server
+  - dashboard
+- configure MacOS DNS resolver for .localdev domain
+
+# Launch development context
+`./launch.sh` script:
+- start minikube cluster
+- load minikube docker environment
+- launch tilt
+
+Once Tilt is launched, the app should be available at tilt-demo.localdev

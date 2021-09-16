@@ -1,0 +1,50 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tilt-demo
+  labels:
+    app: tilt-demo
+spec:
+  selector:
+    matchLabels:
+      app: tilt-demo
+  template:
+    metadata:
+      labels:
+        app: tilt-demo
+    spec:
+      containers:
+        - name: tilt-demo
+          image: tilt-demo
+          ports:
+            - containerPort: 8000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: service-tilt-demo
+spec:
+  type: NodePort
+  ports:
+    - protocol: TCP
+      port: 8000
+      targetPort: 8000
+  selector:
+    app: tilt-demo
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-tilt-demo
+spec:
+  rules:
+    - host: tilt-demo.localdev
+      http:
+        paths:
+          - path: /
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: service-tilt-demo
+                port:
+                  number: 8000
