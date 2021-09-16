@@ -9,7 +9,7 @@ brew install kubectl
 brew install docker-credential-helper
 brew install tilt-dev/tap/tilt
 
-echo "Download minikube"
+echo "Download minikube" # Version available using homebrew (1.23.0) has a configuration issue with ingress addon
 curl -LO https://storage.googleapis.com/minikube/releases/v1.22.0/minikube-darwin-amd64
 echo "Install minikube, need sudo access"
 sudo install minikube-darwin-amd64 /usr/local/bin/minikube
