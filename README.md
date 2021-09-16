@@ -30,3 +30,10 @@ Scripts is this repo are based on documentation and blog posts:
 - launch tilt
 
 Once Tilt is launched, the app should be available at tilt-demo.localdev
+
+# Using Docker
+To use Docker from anywhere on your machine:
+```bash
+$ minikube -p localdev docker-env | source
+$ docker info
+```
