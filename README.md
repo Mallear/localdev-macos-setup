@@ -37,6 +37,15 @@ To use Docker from anywhere on your machine:
 $ minikube -p localdev docker-env | source
 $ docker info
 ```
+## Volumes mount
+
+To mount a volume like you did with docker-compose project:
+
+```bash
+$ minikube mount ./:$(pwd)
+$ docker-compose up
+```
+
 # Keeping containers
 
-Running `minikube stop/start` will delete all container not linked to kubernetes or addons. To avoid this, run `minikube pause/unpause`.
+Running `minikube stop/start` will delete all container not linked to kubernetes or addons. To avoid this, run `minikube pause/unpause.
