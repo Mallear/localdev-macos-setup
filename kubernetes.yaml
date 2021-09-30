@@ -24,10 +24,10 @@ kind: Service
 metadata:
   name: service-tilt-demo
 spec:
-  type: NodePort
+  type: LoadBalancer
   ports:
     - protocol: TCP
-      port: 8000
+      port: 80
       targetPort: 8000
   selector:
     app: tilt-demo
@@ -47,4 +47,4 @@ spec:
               service:
                 name: service-tilt-demo
                 port:
-                  number: 8000
+                  number: 80
