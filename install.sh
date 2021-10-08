@@ -36,7 +36,7 @@ METALLB_IP_PREFIX_RANGE=$(minikube ip | sed -r 's/(.*)./\1/')
 echo "Configure metallb"
 cat ~/.minikube/profiles/localdev/config.json  \
 | jq '.KubernetesConfig.LoadBalancerStartIP="'${minikube_ip}'"' \
-| jq '.KubernetesConfig.LoadBalancerEndIP="'${METALLB_IP_PREFIX_RANGE}120'"' \
+| jq '.KubernetesConfig.LoadBalancerEndIP="'${METALLB_IP_PREFIX_RANGE}20'"' \
 > ~/.minikube/profiles/localdev/config.json.tmp && mv ~/.minikube/profiles/localdev/config.json.tmp ~/.minikube/profiles/localdev/config.json
 
 minikube addons configure metallb
