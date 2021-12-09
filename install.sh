@@ -15,11 +15,11 @@ echo "Install minikube, need sudo access"
 sudo install minikube-darwin-amd64 /usr/local/bin/minikube
 rm minikube-darwin-amd64
 
-minikube config set cpus 6
-minikube config set memory 12g
+minikube config set cpus 3
+minikube config set memory 6g
 
 echo "Starting cluster"
-minikube start --kubernetes-version=v1.21.5 --driver=hyperkit --container-runtime=docker -p localdev
+minikube start --nodes 2 --kubernetes-version=v1.21.5 --driver=hyperkit --container-runtime=docker -p localdev
 
 minikube profile localdev
 minikube_ip=$(minikube ip)
